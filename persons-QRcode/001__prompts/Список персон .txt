@@ -1,0 +1,103 @@
+        
+		для базы данных SQLite версия 3.46.1 
+Путь к файлу БД "D:\persons-QRcode\_bd"
+Путь к хранени фотографий "D:\persons-QRcode\_photos"
+Файл БД "persons_QRcode"
+таблица "persons"
+		
+		CREATE TABLE IF NOT EXISTS persons (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name TEXT,
+            middle_name TEXT,
+            last_name TEXT,
+            last_name2 TEXT,
+            gender TEXT CHECK(gender IN ('мужской','женский','')),
+            salutation TEXT,
+            language TEXT,
+            status TEXT,
+            organization TEXT,
+            position TEXT,
+            mobile1 TEXT,
+            mobile2 TEXT,
+            mobile3 TEXT,
+            mobile4 TEXT,
+            email TEXT UNIQUE,
+            email_confirmed BOOLEAN,
+            contact_first_name TEXT,
+            contact_middle_name TEXT,
+            contact_last_name TEXT,
+            contact_last_name2 TEXT,
+            contact_gender TEXT CHECK(contact_gender IN ('мужской','женский')),
+            contact_language TEXT,
+            contact_position TEXT,
+            contact_mobile1 TEXT,
+            contact_mobile2 TEXT,
+            contact_mobile3 TEXT,
+            contact_mobile4 TEXT,
+            contact_email TEXT UNIQUE,
+            contact_email_confirmed BOOLEAN,
+            qr_code TEXT,
+            qr_created TEXT,
+            badge_created BOOLEAN,
+            badge_created_at TIMESTAMP,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            active BOOLEAN,
+            allowed BOOLEAN,
+            notified_email BOOLEAN,
+            notified_email_at TIMESTAMP,
+            notified_whatsapp BOOLEAN,
+            notified_whatsapp_at TIMESTAMP,
+            notified_telegram BOOLEAN,
+            notified_telegram_at TIMESTAMP,
+            notified_max BOOLEAN,
+            notified_max_at TIMESTAMP,
+            passed BOOLEAN,
+            passed_at TIMESTAMP,
+            gate_number TEXT,
+            notes TEXT,
+            title TEXT,
+            photo_path TEXT
+			
+Нужно создать CSV файл с последующим импортом в БД таблицу persons 
+нужносоздать CSV файл список знаменитых известных популярных актёров , режисёров , певцов , коипозиторов разных национальностей 
+
+название колонок csv строго соответствует и совпадает с названиями полей таблицы
+пустые поля заполняются пустым значением или  пробелом 
+Поля строго соответствуют структуре таблицы persons: все колонки, включая уведомления, проход и пр.
+
+
+notes = самое знаменитое известное произведение или фильм или песня.
+
+language = по национальности (русский, английский, немецкий, сербский).
+
+position = певец / актёр / актриса / режиссёр / музыкант.
+
+photo_path = в формате id_Фамилия_Имя_Отчество.jpg.
+
+email = фамилия латиницей + первая буква имени (инициалы).
+пол мужской или женский. Если точно установить не удаётся - пустое значение 
+Пустые поля корректно оформлены: текстовые — ""; булевы — 0; временные — пусто.
+
+E-mail: фамилия латиницей + инициалы от имени (lowercase) + @example.com.
+
+Мобильные номера — случайные, но в правильном формате.
+
+Photo_path: формат id_Фамилия_Имя_Отчество.jpg (где id — порядковый номер строки).
+
+Notes: у Бетховена Лунная соната 
+
+Язык: соответствует национальности (русский, английский, немецкий, сербский).
+
+Position — певец, актёр, актриса, режиссёр, музыкант, композитор (для Бетховена)
+notes = фильм или песня.
+
+language = по национальности (русский, английский, немецкий, сербский).
+
+position = певец / актёр / актриса / режиссёр / музыкант.
+
+photo_path = в формате id_Фамилия_Имя_Отчество.jpg.
+
+email = фамилия латиницей + первая буква имени (инициалы)
+поля  first_name middle_name last_name на русском 
+поля contact_first_name contact_middle_name contact_last_name Tcontact_last_name2 пусть будет на языке национальности 
